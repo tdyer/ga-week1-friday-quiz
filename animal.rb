@@ -1,46 +1,57 @@
+# Write a module that can add the swim behavior to Animals.
+# Add a Dolphin class that is a subclass of Animal.
+# Add, Mixin, the swim behavior to the Dolphin class.
+# Create an instance of the Dolphin class and print out the result of calling it's swim method.
+# Make all the classes defined so far be in the namespace 'GA'
+# Make sure all the behavior methods, swim, speak, etc still print out to the console/terminal.
+# module GA 
+  module GA
+    module ClassMethods
+      
+    end
+    
+    module InstanceMethods
+      
+    end
+    
+    def self.included(receiver)
+      receiver.extend         ClassMethods
+      receiver.send :include, InstanceMethods
+    end
+  end
+  module ICanSwin
 
-# Define a parent Animal class
-# with the move behavior
-class Animal  
-  def move  
-     "i can move!"  
+    def swim 
+      puts "I can now swim too"
+    end
+  end
+
+  class Animal  
+
+    def move  
+       "i can move!"  
+    end  
   end  
-end  
 
-# Define a Mammal class that inherits from Animal
-# with the speak and eat behavior
-class Mammal < Animal
+  class Dolphin < Animal 
 
-  def eat  
-    "i can eat! yum yum yum"  
+   include ICanSwin
+
+    attr_accessor :move , :dive
+
+    def initialize(eat, dive)
+      @eat = eat 
+      @dive = dive 
+    end
+
+    def eat
+      "i can eat #{eat}!"  
+    end 
+   
+    def dive 
+      "i can dive like a #{dive}"  
+    end 
   end 
-  def speak  
-    "i can speak"  
-  end 
-end  
 
-
-# Define a Dog class that inherits from Mammal
-# that redefines or overrides the speak behavior
-
-class Dog < Mammal  
   
-  def initialize
-  end 
-
-  def speak 
-    "WHOOF"  
-  end  
-end  
-
-fido = Dog.new('fido', 5)
-puts fido.speak
-puts fido.move
-
-
-
-
-
-
-
 
