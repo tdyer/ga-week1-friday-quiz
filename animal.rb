@@ -1,6 +1,10 @@
+module Swim
+  def swim
+    "i can swim"
+  end
+end
 
-# Define a parent Animal class
-# with the move behavior
+module GA
 class Animal  
   def move  
      "i can move!"  
@@ -19,27 +23,26 @@ class Mammal < Animal
   end 
 end  
 
-
 # Define a Dog class that inherits from Mammal
 # that redefines or overrides the speak behavior
 
 class Dog < Mammal  
-  
-  def initialize
-  end 
-
   def speak 
     "WHOOF"  
   end  
 end  
 
-fido = Dog.new('fido', 5)
+class Dolphin < Animal
+  include Swim
+end
+end
+
+flipper = GA::Dolphin.new
+puts flipper.swim
+
+fido = GA::Dog.new
 puts fido.speak
-puts fido.move
-
-
-
-
+puts fido.eat
 
 
 
