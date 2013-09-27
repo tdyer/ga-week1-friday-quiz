@@ -1,8 +1,8 @@
-#Quiz Week 01
+#Quiz Week 01 Friday
 
 ### To Do
 - Write a module that can add the swim behavior to Animals.
-- Add an Dolphin class that is a subclass of Animal.
+- Add a Dolphin class that is a subclass of Animal.
 - Add, *Mixin*, the swim behavior to the Dolphin class.
 - Create an instance of the Dolphin class and print out the result of
   calling it's swim method.
